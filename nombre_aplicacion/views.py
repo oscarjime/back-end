@@ -1,15 +1,9 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
+# Vista para la página principal de bienvenida
 def bienvenida(request):
-    html_contenido = """
-    <h1>¡Bienvenido a la aplicación Agenda!</h1>
-    <p>Esta es la base técnica de la aplicación desarrollada para la Evaluación 1.</p>
-    """
-    return HttpResponse(html_contenido)
+    return render(request, 'bienvenida.html')
 
+# Handler para el error 404 usando plantilla HTML
 def mi_error_404(request, exception=None):
-    return HttpResponse(
-        "<h1>Error 404 - Página no encontrada</h1>"
-        "<p>La ruta ingresada no existe en el sistema de la Agenda.</p>",
-        status=404
-    )
+    return render(request, '404.html', status=404)

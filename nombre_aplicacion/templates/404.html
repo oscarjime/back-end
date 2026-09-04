@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404 - Agenda</title>
+    <!-- CSS Bootswatch Lux (Blanco y Negro) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lux/bootstrap.min.css">
+    <style>
+        body { 
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+        }
+        .error-card { 
+            max-width: 580px; 
+            border-radius: 24px !important;
+            transition: transform 0.3s ease;
+        }
+        .error-card:hover {
+            transform: translateY(-4px);
+        }
+        .error-badge {
+            font-size: 80px;
+            font-weight: 900;
+            color: #000;
+            line-height: 1;
+        }
+        .modal-content {
+            border-radius: 24px !important;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand fw-bold m-0" href="/">Agenda</a>
+    <div class="d-flex align-items-center gap-2 ms-auto">
+      <span class="navbar-text text-white opacity-75 small d-none d-md-inline me-2">v1.0</span>
+      <button type="button" class="btn btn-light text-dark rounded-pill px-3 py-1 btn-sm fw-bold" data-bs-toggle="modal" data-bs-target="#loginModal">
+        Iniciar sesión
+      </button>
+      <button type="button" class="btn btn-outline-light rounded-pill px-3 py-1 btn-sm fw-bold" data-bs-toggle="modal" data-bs-target="#registerModal">
+        Registro
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="container my-auto py-5">
+    <div class="card error-card shadow-lg border-0 text-center mx-auto">
+        <div class="card-body p-5">
+            <div class="error-badge mb-2">404</div>
+            <h2 class="card-title text-dark fw-bold mb-3">Página no encontrada</h2>
+            <p class="card-text text-muted mb-4 fs-5">
+                La ruta que intentas consultar no existe o cambió de lugar.
+            </p>
+            <a href="/" class="btn btn-dark btn-lg rounded-pill px-5 py-3 shadow fw-bold">Volver al Inicio</a>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Iniciar Sesión -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow-lg border-0 p-3">
+      <div class="modal-header border-0 pb-0">
+        <h4 class="modal-title fw-bold text-dark" id="loginModalLabel">Iniciar Sesión</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-3">
+        <form>
+          <div class="mb-3 text-start">
+            <label for="inputEmail404" class="form-label small fw-bold text-muted">Correo electrónico o Usuario</label>
+            <input type="text" class="form-control rounded-pill px-3" id="inputEmail404" placeholder="usuario@ejemplo.com">
+          </div>
+          <div class="mb-3 text-start">
+            <label for="inputPassword404" class="form-label small fw-bold text-muted">Contraseña</label>
+            <div class="input-group">
+              <input type="password" class="form-control rounded-start-pill px-3 border-end-0" id="inputPassword404" placeholder="••••••••">
+              <button class="btn btn-outline-secondary rounded-end-pill px-3 border-start-0" type="button" onclick="togglePassword('inputPassword404', this)">
+                <svg class="eye-open" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
+                  <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
+                </svg>
+                <svg class="eye-closed d-none" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486z"/>
+                  <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/>
+                  <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.12 11.332 5.88 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.709.708zm10.296 8.884-12-12 .708-.708 12 12z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <button type="button" class="btn btn-dark w-100 rounded-pill py-2 shadow-sm fw-bold mb-3">
+            Ingresar
+          </button>
+        </form>
+
+        <div class="text-center my-3 position-relative">
+          <hr class="text-muted">
+          <span class="position-absolute top-50 start-50 translate-middle bg-white px-3 small text-muted">o</span>
+        </div>
+
+        <button type="button" class="btn btn-outline-dark w-100 rounded-pill py-2 fw-bold d-flex align-items-center justify-content-center gap-2">
+          <svg width="18" height="18" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          </svg>
+          Continuar con Google
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Registro -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow-lg border-0 p-3">
+      <div class="modal-header border-0 pb-0">
+        <div>
+          <h4 class="modal-title fw-bold text-dark" id="registerModalLabel">Crear Cuenta</h4>
+          <span class="small text-muted fw-bold" id="stepTitle404">Paso 1 de 2: Datos Personales</span>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="px-3 mt-3">
+        <div class="progress" style="height: 6px; border-radius: 10px;">
+          <div id="registerProgress404" class="progress-bar bg-dark" role="progressbar" style="width: 50%; border-radius: 10px; transition: width 0.3s ease;"></div>
+        </div>
+      </div>
+
+      <div class="modal-body pt-3">
+        
+        <div class="alert alert-secondary py-2 px-3 border-0 rounded-4 small mb-3 text-start d-flex align-items-center gap-2">
+          <span class="badge bg-dark rounded-circle px-2 py-1">i</span>
+          <span>Los campos marcados con <strong class="text-danger">*</strong> son obligatorios.</span>
+        </div>
+
+        <div id="registerAlert404" class="alert alert-danger py-2 small d-none text-start" role="alert">
+          Por favor, completa todos los campos requeridos para continuar.
+        </div>
+
+        <form id="registerForm404" novalidate>
+          
+          <!-- PARTE 1 -->
+          <div id="step1_404">
+            <div class="mb-3 text-start">
+              <label for="regNombre404" class="form-label small fw-bold text-muted">Nombre <span class="text-danger">*</span></label>
+              <input type="text" class="form-control rounded-pill px-3" id="regNombre404" placeholder="Tu nombre" required>
+            </div>
+            <div class="mb-3 text-start">
+              <label for="regApellido404" class="form-label small fw-bold text-muted">Apellido <span class="text-danger">*</span></label>
+              <input type="text" class="form-control rounded-pill px-3" id="regApellido404" placeholder="Tu apellido" required>
+            </div>
+            <div class="mb-4 text-start">
+              <label for="regTelefono404" class="form-label small fw-bold text-muted">Teléfono <span class="text-danger">*</span></label>
+              <div class="input-group">
+                <span class="input-group-text rounded-start-pill bg-light border-end-0 text-muted fw-bold ps-3 pe-1">+56 9</span>
+                <input type="text" class="form-control rounded-end-pill border-start-0 ps-1" id="regTelefono404" placeholder="12345678" maxlength="8" required>
+              </div>
+              <div class="form-text small">Ingresa únicamente los 8 dígitos restantes.</div>
+            </div>
+            <button type="button" class="btn btn-dark w-100 rounded-pill py-2 shadow-sm fw-bold" onclick="goToStep404(2)">
+              Siguiente &rarr;
+            </button>
+          </div>
+
+          <!-- PARTE 2 -->
+          <div id="step2_404" class="d-none">
+            <div class="mb-3 text-start">
+              <label for="regCorreo404" class="form-label small fw-bold text-muted">Correo electrónico <span class="text-danger">*</span></label>
+              <input type="email" class="form-control rounded-pill px-3" id="regCorreo404" placeholder="correo@ejemplo.com" required>
+            </div>
+            <div class="mb-3 text-start">
+              <label for="regPassword404" class="form-label small fw-bold text-muted">Contraseña <span class="text-danger">*</span></label>
+              <div class="input-group">
+                <input type="password" class="form-control rounded-start-pill px-3 border-end-0" id="regPassword404" placeholder="••••••••" required>
+                <button class="btn btn-outline-secondary rounded-end-pill px-3 border-start-0" type="button" onclick="togglePassword('regPassword404', this)">
+                  <svg class="eye-open" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
+                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
+                  </svg>
+                  <svg class="eye-closed d-none" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486z"/>
+                    <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/>
+                    <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.12 11.332 5.88 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.709.708zm10.296 8.884-12-12 .708-.708 12 12z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="mb-4 text-start">
+              <label for="regConfirmPassword404" class="form-label small fw-bold text-muted">Confirmar contraseña <span class="text-danger">*</span></label>
+              <div class="input-group">
+                <input type="password" class="form-control rounded-start-pill px-3 border-end-0" id="regConfirmPassword404" placeholder="••••••••" required>
+                <button class="btn btn-outline-secondary rounded-end-pill px-3 border-start-0" type="button" onclick="togglePassword('regConfirmPassword404', this)">
+                  <svg class="eye-open" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
+                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
+                  </svg>
+                  <svg class="eye-closed d-none" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486z"/>
+                    <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/>
+                    <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.12 11.332 5.88 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.709.708zm10.296 8.884-12-12 .708-.708 12 12z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="d-flex gap-2">
+              <button type="button" class="btn btn-outline-dark rounded-pill py-2 w-50 fw-bold" onclick="goToStep404(1)">
+                &larr; Atrás
+              </button>
+              <button type="submit" class="btn btn-dark rounded-pill py-2 w-50 shadow-sm fw-bold">
+                Registrarse
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('regTelefono404').addEventListener('input', function() {
+    this.value = this.value.replace(/\D/g, '').slice(0, 8);
+  });
+
+  function togglePassword(inputId, btn) {
+    const input = document.getElementById(inputId);
+    const eyeOpen = btn.querySelector('.eye-open');
+    const eyeClosed = btn.querySelector('.eye-closed');
+
+    if (input.type === 'password') {
+      input.type = 'text';
+      eyeOpen.classList.add('d-none');
+      eyeClosed.classList.remove('d-none');
+    } else {
+      input.type = 'password';
+      eyeOpen.classList.remove('d-none');
+      eyeClosed.classList.add('d-none');
+    }
+  }
+
+  function goToStep404(step) {
+    const step1 = document.getElementById('step1_404');
+    const step2 = document.getElementById('step2_404');
+    const progressBar = document.getElementById('registerProgress404');
+    const stepTitle = document.getElementById('stepTitle404');
+    const alertMsg = document.getElementById('registerAlert404');
+
+    if (step === 2) {
+      const nombre = document.getElementById('regNombre404');
+      const apellido = document.getElementById('regApellido404');
+      const telefono = document.getElementById('regTelefono404');
+
+      let isValid = true;
+
+      [nombre, apellido].forEach(input => {
+        if (!input.value.trim()) {
+          input.classList.add('is-invalid');
+          isValid = false;
+        } else {
+          input.classList.remove('is-invalid');
+        }
+      });
+
+      if (telefono.value.length !== 8) {
+        telefono.classList.add('is-invalid');
+        alertMsg.textContent = 'El teléfono debe contener exactamente 8 dígitos.';
+        alertMsg.classList.remove('d-none');
+        return;
+      } else {
+        telefono.classList.remove('is-invalid');
+      }
+
+      if (!isValid) {
+        alertMsg.textContent = 'Por favor, llena todos los campos obligatorios antes de continuar.';
+        alertMsg.classList.remove('d-none');
+        return;
+      }
+
+      alertMsg.classList.add('d-none');
+      step1.classList.add('d-none');
+      step2.classList.remove('d-none');
+      progressBar.style.width = '100%';
+      stepTitle.textContent = 'Paso 2 de 2: Credenciales';
+    } else {
+      alertMsg.classList.add('d-none');
+      step2.classList.add('d-none');
+      step1.classList.remove('d-none');
+      progressBar.style.width = '50%';
+      stepTitle.textContent = 'Paso 1 de 2: Datos Personales';
+    }
+  }
+
+  document.getElementById('registerForm404').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const correo = document.getElementById('regCorreo404');
+    const pass = document.getElementById('regPassword404');
+    const confirmPass = document.getElementById('regConfirmPassword404');
+    const alertMsg = document.getElementById('registerAlert404');
+
+    let isValid = true;
+
+    [correo, pass, confirmPass].forEach(input => {
+      if (!input.value.trim()) {
+        input.classList.add('is-invalid');
+        isValid = false;
+      } else {
+        input.classList.remove('is-invalid');
+      }
+    });
+
+    if (pass.value && confirmPass.value && pass.value !== confirmPass.value) {
+      confirmPass.classList.add('is-invalid');
+      alertMsg.textContent = 'Las contraseñas no coinciden.';
+      alertMsg.classList.remove('d-none');
+      return;
+    }
+
+    if (!isValid) {
+      alertMsg.textContent = 'Por favor, llena todos los campos obligatorios.';
+      alertMsg.classList.remove('d-none');
+      return;
+    }
+
+    alertMsg.classList.add('d-none');
+    alert('¡Registro completado exitosamente!');
+  });
+</script>
+</body>
+</html>
